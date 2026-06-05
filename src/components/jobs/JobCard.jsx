@@ -1,6 +1,10 @@
 import { formatISTDate } from "../../utils/dateFormatter";
+import { FiEdit2 } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export default function JobCard({ job }) {
+  const navigate = useNavigate();
+
   const getStatusStyle = (status) => {
     switch (status) {
       case "OPEN":
@@ -37,7 +41,16 @@ export default function JobCard({ job }) {
       </span>
 
       {/* Title */}
-      <h3 className="font-semibold text-lg text-slate-900 mb-3">{job.title}</h3>
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="font-semibold text-lg text-slate-900">{job.title}</h3>
+
+        <button
+          onClick={() => navigate(`/jobs/edit/${job.id}`)}
+          className="text-slate-400 hover:text-blue-600 transition cursor-pointer"
+        >
+          <FiEdit2 size={18} />
+        </button>
+      </div>
 
       {/* Location */}
       <p className="text-slate-500 text-sm mb-6">📍 {job.location}</p>

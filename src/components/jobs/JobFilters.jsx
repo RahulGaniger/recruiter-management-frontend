@@ -23,7 +23,7 @@ export default function JobFilters({
         <select
           value={status}
           onChange={(e) => setStatus(e.target.value)}
-          className="border border-slate-300 rounded-lg px-4 py-2 bg-white"
+          className="border border-slate-300 rounded-lg px-4 py-2 bg-white cursor-pointer"
         >
           <option value="">All Statuses</option>
 
@@ -36,7 +36,7 @@ export default function JobFilters({
         <select
           value={sortOrder}
           onChange={(e) => setSortOrder(e.target.value)}
-          className="border border-slate-300 rounded-lg px-4 py-2 bg-white"
+          className="border border-slate-300 rounded-lg px-4 py-2 bg-white cursor-pointer"
         >
           <option value="desc">Newest First</option>
 
@@ -46,7 +46,7 @@ export default function JobFilters({
         {/* Reset */}
         <button
           onClick={resetFilters}
-          className="bg-slate-800 text-white rounded-lg px-4 py-2 hover:bg-slate-900 w-30"
+          className="bg-slate-800 text-white rounded-lg px-4 py-2 hover:bg-slate-900 w-30 cursor-pointer"
         >
           Reset
         </button>

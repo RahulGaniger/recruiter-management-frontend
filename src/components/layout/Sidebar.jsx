@@ -7,13 +7,33 @@ export default function Sidebar() {
         <h1 className="text-4xl font-bold mb-10">ATS</h1>
 
         <nav className="space-y-6 flex flex-col">
-          <a href="/dashboard">Dashboard</a>
+          <a
+            href="/dashboard"
+            className="hover:text-blue-400 transition cursor-pointer"
+          >
+            Dashboard
+          </a>
 
-          <a href="/jobs">Jobs</a>
+          <a
+            href="/jobs"
+            className="hover:text-blue-400 transition cursor-pointer"
+          >
+            Jobs
+          </a>
 
-          <a href="/create-job">Create Job</a>
+          <a
+            href="/create-job"
+            className="hover:text-blue-400 transition cursor-pointer"
+          >
+            Create Job
+          </a>
 
-          <a href="/candidates">Candidates</a>
+          <a
+            href="/candidates"
+            className="hover:text-blue-400 transition cursor-pointer"
+          >
+            Candidate Analysis
+          </a>
         </nav>
       </div>
     </aside>

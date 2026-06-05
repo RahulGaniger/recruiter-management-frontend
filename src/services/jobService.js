@@ -1,5 +1,6 @@
 import api from "./api";
 
+// fetch all jobs
 export const getJobs = async () => {
   const res = await api.get("/jobs");
   return res.data;
@@ -11,6 +12,13 @@ export const createJob = async (data) => {
   return res.data;
 };
 
+// fetch a job by id
+export const getJobById = async (id) => {
+  const res = await api.get(`/jobs/${id}`);
+  return res.data;
+};
+
+// update a job by id
 export const updateJob = async (
   id,
   data
@@ -23,6 +31,7 @@ export const updateJob = async (
   return res.data;
 };
 
+// delete a job by id
 export const deleteJob = async (id) => {
   const res = await api.delete(
     `/jobs/${id}`
@@ -31,6 +40,7 @@ export const deleteJob = async (id) => {
   return res.data;
 };
 
+//closed a job by id
 export const closeJob = async (id) => {
   const res = await api.patch(
     `/jobs/${id}/close`

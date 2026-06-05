@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import JobCard from "../components/jobs/JobCard";
 import JobFilters from "../components/jobs/JobFilters";
@@ -77,7 +75,7 @@ export default function Jobs() {
         </div>
 
         <button
-          className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700"
+          className="bg-blue-600 text-white px-5 py-3 rounded-lg hover:bg-blue-700 cursor-pointer"
           onClick={() => navigate("/create-job")}
         >
           + Create Job
