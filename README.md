@@ -140,6 +140,7 @@ npm run dev
 Application will run on:
 
 http://localhost:5173
+https://recruiter-management-frontend.vercel.app
 
 ---
 
@@ -147,7 +148,7 @@ http://localhost:5173
 
 Create a .env file in the root directory.
 
-VITE_API_URL=http://localhost:8000
+VITE_API_URL=https://recruiter-management-backend.onrender.com
 
 ---
 
