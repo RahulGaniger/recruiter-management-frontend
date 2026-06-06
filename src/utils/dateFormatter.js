@@ -1,5 +1,5 @@
-// utils/dateFormatter.js
 
+// Utility function to format UTC date string to IST format
 export const formatISTDate = (utcDateString) => {
   return new Date(utcDateString + "Z").toLocaleString("en-IN", {
     timeZone: "Asia/Kolkata",

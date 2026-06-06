@@ -5,6 +5,8 @@ import Dashboard from "../pages/Dashboard";
 import Jobs from "../pages/Jobs";
 import CreateJob from "../pages/CreateJob";
 import Candidate from "../pages/Candidate";
+import Candidates from "../pages/Candidates";
+import ProtectedRoute from "./ProtectedRoute";
 
 export default function AppRoutes() {
   return (
@@ -13,28 +15,58 @@ export default function AppRoutes() {
       <Route path="/" element={<Auth />} />
 
       {/* Protected Routes */}
-      <Route path="/dashboard" element={<Dashboard />} />
 
-      <Route path="/jobs" element={<Jobs />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/create-job" element={<CreateJob />} />
-      <Route path="/jobs/edit/:id" element={<CreateJob />} />
+      <Route
+        path="/jobs"
+        element={
+          <ProtectedRoute>
+            <Jobs />
+          </ProtectedRoute>
+        }
+      />
 
-      <Route path="/candidates" element={<Candidate />} />
+      <Route
+        path="/create-job"
+        element={
+          <ProtectedRoute>
+            <CreateJob />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/jobs/edit/:id"
+        element={
+          <ProtectedRoute>
+            <CreateJob />
+          </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/candidates"
+        element={
+          <ProtectedRoute>
+            <Candidate />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/candidate"
+        element={
+          <ProtectedRoute>
+            <Candidates />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
-
-// import { Routes, Route } from "react-router-dom";
-
-// function Auth() {
-//   return <h1>Auth Page</h1>;
-// }
-
-// export default function AppRoutes() {
-//   return (
-//     <Routes>
-//       <Route path="/" element={<Auth />} />
-//     </Routes>
-//   );
-// }

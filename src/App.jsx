@@ -1,13 +1,14 @@
 import AppRoutes from "./routes/AppRoutes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  return <AppRoutes />;
+  return (
+    <>
+      <ToastContainer position="top-center" autoClose={3000} theme="light" />
+      <AppRoutes />
+    </>
+  );
 }
 
 export default App;
-
-// function App() {
-//   return <h1>Hello World</h1>;
-// }
-
-// export default App;

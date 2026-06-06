@@ -2,6 +2,7 @@ import { getJobs } from "../services/jobService";
 import { useEffect, useState } from "react";
 import Sidebar from "../components/layout/Sidebar";
 import { analyzeResume } from "../services/candidateService";
+import { toast } from "react-toastify";
 
 export default function Candidates() {
   const [jobId, setJobId] = useState("");
@@ -29,7 +30,7 @@ export default function Candidates() {
     e.preventDefault();
 
     if (!jobId || !resume) {
-      alert("Select Job and Resume");
+      toast.error("Select Job and Resume");
       return;
     }
 
@@ -48,7 +49,7 @@ export default function Candidates() {
     } catch (err) {
       console.log(err);
 
-      alert(err?.response?.data?.detail || "Analysis Failed");
+      toast.error(err?.response?.data?.detail || "Analysis Failed");
     } finally {
       setLoading(false);
     }

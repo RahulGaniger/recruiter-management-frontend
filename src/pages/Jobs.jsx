@@ -4,6 +4,7 @@ import JobFilters from "../components/jobs/JobFilters";
 import Sidebar from "../components/layout/Sidebar";
 import { getJobs } from "../services/jobService";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function Jobs() {
   const [jobs, setJobs] = useState([]);
@@ -19,6 +20,7 @@ export default function Jobs() {
     fetchJobs();
   }, []);
 
+  // Fetch jobs from API
   const fetchJobs = async () => {
     try {
       setLoading(true);
@@ -29,12 +31,13 @@ export default function Jobs() {
     } catch (err) {
       console.error(err);
 
-      setError(err?.response?.data?.detail || "Failed to fetch jobs");
+      toast.error(err?.response?.data?.detail || "Failed to fetch jobs");
     } finally {
       setLoading(false);
     }
   };
 
+  // Filter and sort jobs based on user input
   const filteredJobs = jobs
     .filter((job) => {
       const matchesSearch =
